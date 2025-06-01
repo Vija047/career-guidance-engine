@@ -1,4 +1,4 @@
-# AI-Powered Career Guidance System 🎓
+# AI-Powered Career Guidance System 
 
 AI-driven career guidance platform designed for the Indian education ecosystem. Helps students make informed decisions about their academic and career paths.
 
@@ -105,7 +105,7 @@ career-guidance-engine/
 - **Data**: MongoDB/PostgreSQL
 - **Deployment**: Docker, Cloud (AWS/Azure)
 
-## 🏁 Getting Started
+## Getting Started
 
 1. Clone the repository:
 ```bash
