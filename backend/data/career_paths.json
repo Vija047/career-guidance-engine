@@ -1,0 +1,49 @@
+{
+    "Software Engineer": {
+        "path": "B.Tech -> Internship -> Developer role",
+        "related_exams": [
+            "JEE",
+            "GATE"
+        ],
+        "required_skills": [
+            "Python",
+            "Java",
+            "Data Structures"
+        ],
+        "recommended_courses": [
+            "Computer Science",
+            "Information Technology"
+        ]
+    },
+    "Doctor": {
+        "path": "NEET -> MBBS -> Specialization",
+        "related_exams": [
+            "NEET"
+        ],
+        "required_skills": [
+            "Biology",
+            "Chemistry",
+            "Patient Care"
+        ],
+        "recommended_courses": [
+            "MBBS",
+            "MD"
+        ]
+    },
+    "Data Scientist": {
+        "path": "B.Tech/BSc -> Masters -> Analytics role",
+        "related_exams": [
+            "GRE",
+            "GATE"
+        ],
+        "required_skills": [
+            "Python",
+            "Statistics",
+            "Machine Learning"
+        ],
+        "recommended_courses": [
+            "Data Science",
+            "Analytics"
+        ]
+    }
+}
