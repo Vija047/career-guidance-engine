@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
-import { fetchCareerRecommendations } from "../services/api";
+import { careerService } from "../services/api";
 
 export default function Recommendations() {
   const [recommendations, setRecommendations] = useState([]);
@@ -14,11 +14,14 @@ export default function Recommendations() {
     try {
       setLoading(true);
       setError(null);
-      const data = await fetchCareerRecommendations();
-      setRecommendations(data);
+      const data = await careerService.getRecommendations([
+        "Python",
+        "JavaScript",
+      ]);
+      setRecommendations(data.recommendations || []);
     } catch (err) {
-      setError("Failed to fetch recommendations. Please try again.");
-      console.error("API Error:", err);
+      setError(err.message);
+      console.error("Failed to fetch recommendations:", err);
     } finally {
       setLoading(false);
     }

@@ -19,10 +19,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -33,17 +32,14 @@ app.add_middleware(
 async def global_exception_handler(request: Request, exc: Exception):
     return JSONResponse(
         status_code=500,
-        content={"detail": f"Internal server error: {str(exc)}"}
+        content={"detail": str(exc)}
     )
 
-# API versioning prefix
-api_v1_prefix = "/api/v1"
-
-# Include routers with version prefix
-app.include_router(health_check_router, prefix=api_v1_prefix)
-app.include_router(recommend_router, prefix=api_v1_prefix)
-app.include_router(aptitude_router, prefix=api_v1_prefix)
-app.include_router(goal_router, prefix=api_v1_prefix)
+# Include routers
+app.include_router(health_check_router, prefix="/api/v1")
+app.include_router(recommend_router, prefix="/api/v1")
+app.include_router(aptitude_router, prefix="/api/v1")
+app.include_router(goal_router, prefix="/api/v1")
 
 @app.get("/")
 async def root():

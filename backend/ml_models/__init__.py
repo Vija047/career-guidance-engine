@@ -1,9 +1,4 @@
 from .aptitude_predictor import AptitudePredictor
+from .goal_extractor import GoalExtractor, extract_goals
 
-try:
-    from .goal_extractor import GoalExtractor
-except ImportError as e:
-    print(f"Warning: GoalExtractor import failed - {e}")
-    GoalExtractor = None
-
-__all__ = ['AptitudePredictor', 'GoalExtractor']
+__all__ = ['AptitudePredictor', 'GoalExtractor', 'extract_goals']
